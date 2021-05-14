@@ -47,10 +47,10 @@ class User implements UserInterface
     private $tasks;
 
     /**
-     * @ORM\Column(type="simple_array")
+     * @ORM\Column(type="string")
      * @Assert\NotBlank(message="Vous devez choisir un rôle.")
      */
-    private $roles;
+    private $role;
 
     public function __construct()
     {
@@ -99,12 +99,17 @@ class User implements UserInterface
 
     public function getRoles(): array
     {
-        return $this->roles;
+        return array($this->getRole());
     }
 
-    public function setRoles(array $roles)
+    public function getRole(): string
     {
-        $this->roles = $roles;
+        return $this->role;
+    }
+
+    public function setRole(string $role)
+    {
+        $this->role = $role;
     }
 
     public function eraseCredentials()
