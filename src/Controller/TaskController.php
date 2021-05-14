@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Task;
 use App\Form\TaskType;
+use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,9 +16,13 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function list(): Response
+    public function list(TaskRepository $taskRepository): Response
     {
-        return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()]);
+        $tasks = $taskRepository->findBy(['user' => $this->getUser()]);
+
+        return $this->render('task/list.html.twig', [
+            'tasks' => $tasks
+        ]);
     }
 
     /**
@@ -26,6 +31,7 @@ class TaskController extends AbstractController
     public function create(Request $request, EntityManagerInterface $em): Response
     {
         $task = new Task();
+        $task->setUser($this->getUser());
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
