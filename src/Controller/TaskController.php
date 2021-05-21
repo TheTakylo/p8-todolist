@@ -18,7 +18,11 @@ class TaskController extends AbstractController
      */
     public function list(TaskRepository $taskRepository): Response
     {
-        $tasks = $taskRepository->findBy(['user' => $this->getUser()]);
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $tasks = $taskRepository->findForAdmin($this->getUser());
+        } else {
+            $tasks = $taskRepository->findBy(['user' => $this->getUser()]);
+        }
 
         return $this->render('task/list.html.twig', [
             'tasks' => $tasks
