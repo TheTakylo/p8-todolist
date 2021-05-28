@@ -13,7 +13,18 @@ abstract class AbstractWebTestCase extends WebTestCase
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
 
-        $testUser = $userRepository->findOneByEmail('a@a.fr');
+        $testUser = $userRepository->findOneByEmail('user@user.fr');
+        $client->loginUser($testUser);
+
+        return $client;
+    }
+
+    public function getAuthenticatedAdminClient(): KernelBrowser
+    {
+        $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+
+        $testUser = $userRepository->findOneByEmail('admin@admin.fr');
         $client->loginUser($testUser);
 
         return $client;

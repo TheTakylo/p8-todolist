@@ -57,14 +57,16 @@ class Task
         return $this->id;
     }
 
-    public function getCreatedAt()
+    public function getCreatedAt(): \Datetime
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($createdAt): Task
     {
         $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     public function getTitle()
@@ -72,9 +74,11 @@ class Task
         return $this->title;
     }
 
-    public function setTitle($title)
+    public function setTitle($title): Task
     {
         $this->title = $title;
+
+        return $this;
     }
 
     public function getContent()
@@ -82,9 +86,11 @@ class Task
         return $this->content;
     }
 
-    public function setContent($content)
+    public function setContent($content): Task
     {
         $this->content = $content;
+
+        return $this;
     }
 
     public function isDone()

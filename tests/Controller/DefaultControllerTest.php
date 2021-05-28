@@ -23,13 +23,22 @@ class DefaultControllerTest extends AbstractWebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    public function testHomepageAuthenticated()
+    public function testHomepageAuthenticatedForUser()
     {
         $client = $this->getAuthenticatedClient();
         $client->request('GET', '/');
 
         $this->assertSelectorTextSame('.container > .row > a.pull-right.btn.btn-danger', 'Se déconnecter');
         $this->assertSelectorNotExists('.container > .row > a.btn.btn-primary');
+        $this->assertResponseIsSuccessful();
+    }
+
+    public function testHomepageAuthenticatedForAdmin()
+    {
+        $client = $this->getAuthenticatedAdminClient();
+        $client->request('GET', '/');
+
+        $this->assertSelectorTextContains('.container > .row > a.btn.btn-primary', 'Créer un utilisateur');
         $this->assertResponseIsSuccessful();
     }
 }
