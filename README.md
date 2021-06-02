@@ -16,11 +16,11 @@ ToDo & Co - Projet 8 du parcours DA - PHP / Symfony
 3. [Compte de test](#Compte-de-test)
 4. [Tests](#Tests)
 
-## Prérequis
+## 1) Prérequis
 
 PHP (>= 7.1)
 
-## Installation
+## 2) Installation
 
 #### Cloner le projet et installer les dépendances
 
@@ -37,14 +37,14 @@ PHP (>= 7.1)
 
 - ```symfony serve```
 
-## Compte de test
+## 3) Compte de test
 
 #### identifiants / mot de passe
 
 - ```user``` / ```user``` (utilisateur)
 - ```admin``` / ```admin``` (administrateur)
 
-## Tests
+## 5) Tests
 
 #### Installation - Créer la base de données et charger les fixtures
 
