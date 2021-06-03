@@ -15,6 +15,7 @@ ToDo & Co - Projet 8 du parcours DA - PHP / Symfony
 2. [Installation](#Installation)
 3. [Compte de test](#Compte-de-test)
 4. [Tests](#Tests)
+5. [Authentification](#Authentification)
 
 ## Prérequis
 
@@ -55,3 +56,7 @@ PHP (>= 7.1)
 #### Lancer les tests
 
 - ```./bin/phpunit```
+
+## Authentification
+
+> Voir en détail [l'authentification](AUTHENTICATION.md)
