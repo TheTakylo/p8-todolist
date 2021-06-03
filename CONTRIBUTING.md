@@ -1,7 +1,7 @@
 ## Comment contribuer au projet
 
 1. [Installation](#Installation)
-2. [Standard de code](#Standard de code)
+2. [Standard de code](#Standard%20de%20code)
 3. [Git](#Git)
 4. [Tests](#Tests)
 
