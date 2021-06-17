@@ -25,7 +25,9 @@ firewalls:
         logout: ~
 ```
 
-L'authentification après la soumission du formulaire est ensuite gérée par le [SecurityController](src/Controller/SecurityController.php) et la méthode **login**
+L'authentification après la soumission du formulaire est ensuite gérée par le composant [security](https://symfony.com/doc/current/components/security.html)
+
+![Authentification](https://symfony.com/doc/2.0/_images/security_anonymous_user_access.png)
 
 ```php
 // src/Controller/SecurityController.php

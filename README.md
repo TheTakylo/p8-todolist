@@ -16,6 +16,7 @@ ToDo & Co - Projet 8 du parcours DA - PHP / Symfony
 3. [Compte de test](#Compte-de-test)
 4. [Tests](#Tests)
 5. [Authentification](#Authentification)
+6. [Audit de qualité & performance](#Audit_de_qualité_&_performance)
 
 ## Prérequis
 
@@ -27,6 +28,13 @@ PHP (>= 7.1)
 
 - ```git clone https://github.com/TheTakylo/p8-todolist.git```
 - ```composer install```
+
+
+#### Configuration du fichier .env
+
+- ``` APP_ENV=dev # mettre "prod" pour la mise ne production``` 
+- ``` APP_SECRET=92fcc46d55ffda903d0f1f67494bd14b # a modifier```
+- ``` DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7" # a configurer```
 
 #### Créer la base de données et charger les fixtures
 
@@ -60,3 +68,7 @@ PHP (>= 7.1)
 ## Authentification
 
 > Voir en détail [l'authentification](AUTHENTICATION.md)
+
+## Audit de qualité & performance
+
+> Voir en détail [l'audit de qualité & performance](AUDIT_PERFORMANCE_QUALITE.pdf)
